@@ -1,0 +1,12 @@
+.link {
+  color: rgb(0, 0, 255);
+  text-decoration: none;
+
+  &:active,
+  &:hover,
+  &:focus,
+  &:visited {
+    color: rgb(0, 0, 255);
+    text-decoration: none;
+  }
+}
