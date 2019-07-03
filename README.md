@@ -2,7 +2,7 @@
 design by Ceyhun Güney
 
 Libs:  
-https://github.com/reactjs/react-transition-group — for animation on desktop
+https://github.com/reactjs/react-transition-group — for animation on desktop  
 https://github.com/Stanko/react-animate-height — for animation on mobile
 
 yarn — install  
