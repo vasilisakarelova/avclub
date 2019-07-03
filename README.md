@@ -1,5 +1,4 @@
 # A.V. Club
-design by Ceyhun Güney
 
 Libs:  
 https://github.com/reactjs/react-transition-group — for animation on desktop  
