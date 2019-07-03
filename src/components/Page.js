@@ -12,9 +12,11 @@ function Page({
   },
 }) {
   return (
-    <section className={css('page', { [`page${name}--prev`]: state && state.prev, [`page${name}`]: name !== undefined } )} style={{ background }}>
-      {children}
-    </section>
+    <div className={css('page', { [`page${name}--prev`]: state && state.prev, [`page${name}`]: name !== undefined } )} style={{ background }}>
+      <div className='page-inner'>
+        {children}
+      </div>
+    </div>
   );
 }
 
