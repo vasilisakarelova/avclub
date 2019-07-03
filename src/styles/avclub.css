@@ -1,0 +1,12 @@
+.avclub-inner {
+  position: relative;
+  display: block;
+  background: #E5D5E7;
+}
+
+.avclub--img {
+  &-wrap {
+    position: relative;
+    display: block;
+  }
+}

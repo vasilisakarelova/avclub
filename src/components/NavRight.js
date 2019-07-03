@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default () => {
+export default ({ location }) => {
+  const url = (location === '/about') ? '/' : '/about'
+  
   return (
     <div className="nav nav--right">
       <Link
         to={{
-          pathname: '/about',
+          pathname: url,
           state: { prev: true },
         }} className="nav__link" >
         About

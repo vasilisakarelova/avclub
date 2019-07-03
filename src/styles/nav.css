@@ -5,17 +5,29 @@
   background-color: #fff;
 
   &--top {
+    bottom: 120px;
     width: 100vw;
-    height: 60px;
+    height: 40px;
+
+    @media screen and (min-width: 984px) {
+      bottom: auto;
+      height: 60px;
+    }
+
     .nav__link {
       background-color: #E5D5E7;
     }
   }
 
   &--bottom {
-    bottom: 0;
+    bottom: 40px;
     width: 100vw;
-    height: 60px;
+    height: 40px;
+
+    @media screen and (min-width: 984px) {
+      bottom: 0;
+      height: 60px;
+    }
 
     .nav__link {
       background-color: #FFB169;
@@ -24,32 +36,54 @@
 
   &--right {
     right: 0;
-    width: 60px;
-    height: 100vh;
+    bottom: 0px;
+    width: 100vw;
+    height: 40px;
+
+    @media screen and (min-width: 984px) {
+      bottom: auto;
+      width: 60px;
+      height: 100vh;
+    }
 
     .nav__link {
       background-color: #FF8F6B;
-      transform: translate(-50%,0) rotate(90deg);
-      width: calc(100vh - 120px);
-      height: 60px;
-      transform-origin: top center;
-      top: 50%;
-      left: 100%;
+      width: 100%;
+
+      @media screen and (min-width: 984px) {
+        transform: translate(-50%,0) rotate(90deg);
+        width: calc(100vh - 120px);
+        height: 60px;
+        transform-origin: top center;
+        top: 50%;
+        left: 100%;
+      }
     }
   }
 
   &--left {
     left: 0;
-    width: 60px;
-    height: 100vh;
+    bottom: 80px;
+    width: 100vw;
+    height: 40px;
+
+    @media screen and (min-width: 984px) {
+      bottom: auto;
+      width: 60px;
+      height: 100vh;
+    }
 
     .nav__link {
       background-color: #95A8B2;
-      transform: translate(-50%) rotate(-90deg);
-      width: calc(100vh - 120px);
-      height: 60px;
-      transform-origin: top center;
-      top: 50%;
+      width: 100%;
+
+      @media screen and (min-width: 984px) {
+        transform: translate(-50%) rotate(-90deg);
+        width: calc(100vh - 120px);
+        height: 60px;
+        transform-origin: top center;
+        top: 50%;
+      }
     }
   }
 }
@@ -57,24 +91,73 @@
 .nav__link {
   position: relative;
   display: block;
-  width: calc(100% - 120px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 28px;
+  line-height: 40px;
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #000000;
   text-decoration: none;
 
+  @media screen and (min-width: 984px) {
+    width: calc(100% - 120px);
+    font-size: 40px;
+    line-height: 60px;
+  }
+
   &:active,
   &:focus,
   &:hover {
     color: #000000;
     text-decoration: none;
+  }
+}
+
+.nav-mobile--link {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: #000000;
+    text-decoration: none;
+  }
+
+  &-avclub {
+    background-color: #E5D5E7;
+  }
+
+  &-work {
+    background-color: #95A8B2;
+  }
+
+  &-composers {
+    background-color: #FFB169;
+  }
+
+  &-about {
+    background-color: #FF8F6B;
+  }
+
+  &-wrap {
+    display: block;
   }
 }

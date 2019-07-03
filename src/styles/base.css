@@ -10,6 +10,7 @@ html, body {
   line-height: 18px;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .root-wrap,
@@ -17,4 +18,19 @@ html, body {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.main-wrap--mobile {
+  display: block;
+  height: 100%;
+  position: relative;
+}
+
+.main-inner--mobile {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
 }
