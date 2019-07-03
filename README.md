@@ -4,5 +4,5 @@ design by Ceyhun Güney
 Libs: -
 
 yarn — install  
-yarn start — start localhost
+yarn dev — start dev live server  
 yarn build — build project  
