@@ -11,6 +11,10 @@ export default function About(props) {
         <div className='avclub--img-wrap'>
           <img className='avclub--img-mobile' alt='video placeholder' src={imgMobile} />
           <img className='avclub--img' alt='video placeholder' src={img} />
+          <div className='avclub--title-wrap'>
+            <div className='avclub--title-small'>featured</div>
+            <div className='avclub--title'>Tatort Weimar: Der Harte Kern</div>
+          </div>
         </div>
       </div>
     </Page>

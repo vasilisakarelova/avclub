@@ -2,11 +2,90 @@
   position: relative;
   display: block;
   background: #E5D5E7;
+  padding: 0 20px;
+  min-height: 100%;
 }
 
 .avclub--img {
-  &-wrap {
+  position: relative;
+  display: none;
+  width: 100%;
+
+  @media screen and (min-width: 984px) {
+    display: block;
+  }
+
+  &-mobile {
     position: relative;
     display: block;
+    width: 100%;
+
+    @media screen and (min-width: 984px) {
+      display: none;
+    }
+  }
+
+  &-wrap {
+    position: absolute;
+    display: block;
+    width: calc(100% - 40px);
+    max-width: 800px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media screen and (min-width: 984px) {
+      width: 80%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+  }
+}
+
+.avclub--title {
+  position: relative;
+  display: block;
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20.09px;
+  line-height: 27.4px;
+  text-align: center;
+  letter-spacing: 0.01em;
+  color: #000000;
+
+  @media screen and (min-width: 984px) {
+    font-size: 40px;
+    line-height: 42px;
+  }
+
+  &-small {
+    position: relative;
+    display: block;
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000000;
+
+    @media screen and (min-width: 984px) {
+      font-size: 16px;
+      line-height: 38px;
+    }
+  }
+
+  &-wrap {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 24px;
+    display: none;
+
+    @media screen and (min-width: 984px) {
+      display: block;
+    }
   }
 }
