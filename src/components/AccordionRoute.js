@@ -19,6 +19,8 @@ export default ({component: Component, ...rest}) => {
               exit: 300
             }}
             appear
+            onEntered={page => { page.querySelector('.page-inner').style.opacity = 1 }}
+            onExit={page => { page.querySelector('.page-inner').style.opacity = 0 }}
           >
             <Component />
           </CSSTransition>

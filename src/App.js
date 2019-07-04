@@ -27,7 +27,7 @@ export default class App extends Component {
 
     this.updateRouteState = this.updateRouteState.bind(this)
 
-    this.customHistory = createBrowserHistory()
+    this.customHistory = createBrowserHistory({ basename: '/getdeveloped' })
     this.customHistory.listen(location => {
       this.updateRouteState(location.pathname)
     });
@@ -61,7 +61,7 @@ export default class App extends Component {
     const supportsHistory = 'pushState' in window.history
 
     return (
-      <Router history={this.customHistory} forceRefresh={!supportsHistory}>
+      <Router history={this.customHistory} forceRefresh={!supportsHistory} >
         { this.state.isMobile
           ? <div className='main-wrap--mobile'>
               <Main />
@@ -97,9 +97,10 @@ export default class App extends Component {
                           classNames={`page${newPage}`}
                           key={pathname}
                           timeout={{
-                            enter: 1000,
-                            exit: 1000,
+                            enter: 500,
+                            exit: 500,
                           }}
+                          onEntered={page => { page.querySelector('.page-inner').style.opacity = 1 }}
                         >
                           <Route
                             location={location}

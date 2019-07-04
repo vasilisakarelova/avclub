@@ -21,7 +21,7 @@
     width: calc(100% - 80px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    transition: transform 1s ease-in-out;
+    transition: transform .5s ease-in-out;
   }
 }
 
@@ -36,6 +36,8 @@
   display: block;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
 }
 
 .page-home {
@@ -43,7 +45,10 @@
     position: fixed;
     top: 0;
     height: calc(100vh - 160px);
-    width: 100%;
+
+    .page-inner {
+      opacity: 1;
+    }
   }
 }
 
