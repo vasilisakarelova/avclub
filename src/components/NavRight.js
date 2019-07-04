@@ -2,8 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export default ({ location }) => {
-  const url = (location === '/about') ? '/' : '/about'
-  
+  const url = (location === '/work') ? '/' : '/work'
+
   return (
     <div className="nav nav--right">
       <Link
@@ -11,7 +11,7 @@ export default ({ location }) => {
           pathname: url,
           state: { prev: true },
         }} className="nav__link" >
-        About
+        Work
       </Link>
     </div>
   );

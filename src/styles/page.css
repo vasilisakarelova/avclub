@@ -11,12 +11,14 @@
 .page {
   height: 100%;
   overflow-y: auto;
+  padding-right: 40px;
+  width: calc(100% + 40px);
 
   @media screen and (min-width: 984px) {
     position: fixed;
     top: 60px;
     height: calc(100vh - 120px);
-    width: calc(100% - 120px);
+    width: calc(100% - 80px);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition: transform 1s ease-in-out;
@@ -85,8 +87,8 @@
 }
 
 .page-composers-enter {
+  + .page-contact-exit,
   + .page-work-exit,
-  + .page-about-exit,
   + .page-avclub-exit {
     transform: none !important;
   }
@@ -107,38 +109,16 @@
 }
 
 .page-avclub-enter {
+  + .page-contact-exit,
   + .page-work-exit,
-  + .page-about-exit,
   + .page-composers-exit {
     transform: none !important;
   }
 }
 
 /* Page About */
-.page-about-enter {
-  transform: translate(100%, 0);
-}
-
-.page-about-enter-active {
-  transform: translate(0, 0);
-  z-index: 1;
-}
-
-.page-about-exit {
-  transform: translate(100%, 0);
-}
-
-.page-about-enter {
-  + .page-work-exit,
-  + .page-avclub-exit,
-  + .page-composers-exit {
-    transform: none !important;
-  }
-}
-
-/* Page Work */
 .page-work-enter {
-  transform: translate(-100%, 0);
+  transform: translate(100%, 0);
 }
 
 .page-work-enter-active {
@@ -147,11 +127,33 @@
 }
 
 .page-work-exit {
-  transform: translate(-100%, 0);
+  transform: translate(100%, 0);
 }
 
 .page-work-enter {
-  + .page-about-exit,
+  + .page-contact-exit,
+  + .page-avclub-exit,
+  + .page-composers-exit {
+    transform: none !important;
+  }
+}
+
+/* Page Work */
+.page-contact-enter {
+  transform: translate(-100%, 0);
+}
+
+.page-contact-enter-active {
+  transform: translate(0, 0);
+  z-index: 1;
+}
+
+.page-contact-exit {
+  transform: translate(-100%, 0);
+}
+
+.page-contact-enter {
+  + .page-work-exit,
   + .page-avclub-exit,
   + .page-composers-exit {
     transform: none !important;

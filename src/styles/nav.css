@@ -123,7 +123,7 @@
   position: relative;
   display: block;
   width: 100%;
-  font-family: Georgia;
+  font-family: Helvetica Neue;
   font-style: normal;
   font-weight: normal;
   font-size: 28px;
@@ -145,7 +145,7 @@
     background-color: #E5D5E7;
   }
 
-  &-work {
+  &-contact {
     background-color: #95A8B2;
   }
 
@@ -153,7 +153,7 @@
     background-color: #FFB169;
   }
 
-  &-about {
+  &-work {
     background-color: #FF8F6B;
   }
 

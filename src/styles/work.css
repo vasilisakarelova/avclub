@@ -1,0 +1,141 @@
+.work-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  min-height: 100%;
+
+  @media screen and (min-width: 984px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 100px;
+  }
+}
+
+.work--video-block {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  @media screen and (min-width: 984px) {
+    width: 40%;
+  }
+}
+
+.work--video-thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 52%;
+  overflow: hidden;
+
+  &-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+  }
+}
+
+.work--video-title {
+  position: relative;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000000;
+
+  @media screen and (min-width: 984px) {
+    padding-top: 20px;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.work--video-credits {
+  font-family: Georgia;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+
+  @media screen and (min-width: 984px) {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 52%;
+    background: #000;
+    color: #fff;
+    opacity: 0;
+    transition: opacity .3s linear;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  p {
+    font: inherit;
+    margin: 0;
+
+    @media screen and (min-width: 984px) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 80%;
+    }
+  }
+}
+
+.work--video-watch {
+  position: relative;
+  display: block;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  color: #000000;
+  padding: 15px 0 20px;
+
+  @media screen and (min-width: 984px) {
+    padding-top: 0;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  &-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+
+    &:active,
+    &:focus,
+    &:visited {
+      text-decoration: underline;
+      color: #000;
+    }
+  }
+}

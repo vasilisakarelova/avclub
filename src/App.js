@@ -11,8 +11,8 @@ import NavRight from './components/NavRight'
 import NavBottom from './components/NavBottom'
 import NavLeft from './components/NavLeft'
 import Main from './components/Main'
-import About from './components/About'
 import Work from './components/Work'
+import Contact from './components/Contact'
 import Composers from './components/Composers'
 import AVClub from './components/AVClub'
 import Error404 from './components/Error404'
@@ -75,8 +75,8 @@ export default class App extends Component {
                 <AccortionLink to="/composers">Composers</AccortionLink>
                 <AccordionRoute exact path="/composers" component={Composers}/>
 
-                <AccortionLink to="/about">About</AccortionLink>
-                <AccordionRoute path="/about" component={About}/>
+                <AccortionLink to="/contact">Contact</AccortionLink>
+                <AccordionRoute path="/contact" component={Contact}/>
               </div>
             </div>
           : <div className='main-wrap'>
@@ -106,9 +106,9 @@ export default class App extends Component {
                             render={() => (
                               <Switch>
                                 <Route exact path="/" component={Main} />
-                                <Route path="/about" component={About} />
-                                <Route path="/composers" component={Composers} />
                                 <Route path="/work" component={Work} />
+                                <Route path="/composers" component={Composers} />
+                                <Route path="/contact" component={Contact} />
                                 <Route path="/avclub" component={AVClub} />
                                 <Route component={Error404} />
                               </Switch>
