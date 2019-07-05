@@ -38,6 +38,8 @@ export default class App extends Component {
   }
 
   componentDidMount () {
+    document.querySelector('.page-inner').style.opacity = 1
+
     document.addEventListener('resized', (ev) => {
       if (ev.data.width < 984 && !this.state.isMobile) {
         this.setState({
@@ -61,7 +63,7 @@ export default class App extends Component {
     const supportsHistory = 'pushState' in window.history
 
     return (
-      <Router history={this.customHistory} forceRefresh={!supportsHistory} >
+      <Router history={this.customHistory} forceRefresh={!supportsHistory}>
         { this.state.isMobile
           ? <div className='main-wrap--mobile'>
               <Main />
