@@ -53,6 +53,10 @@
 }
 
 .page-home--inner {
+  background-image: url('./assets/noise.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+
   @media screen and (min-width: 984px) {
     position: relative;
     display: block;

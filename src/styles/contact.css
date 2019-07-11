@@ -88,7 +88,6 @@
     display: block;
     width: 100px;
     margin: 0 auto;
-    mix-blend-mode: multiply;
 
     @media screen and (min-width: 984px) {
       width: 170px;
@@ -127,7 +126,7 @@
     @media screen and (min-width: 984px) {
       font-size: 16px;
       line-height: 24px;
-      padding-right: 15px;
+      padding-right: 35px;
 
       &:last-of-type {
         padding-right: 0;

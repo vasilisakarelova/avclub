@@ -16,7 +16,9 @@ export default function About(props) {
           </div>
           <div className='work--video-title'>Tatort Weimar: Der Harte Kern</div>
           <div className='work--video-credits'>
-            <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
+              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            </a>
           </div>
           <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
         </div>
@@ -26,7 +28,9 @@ export default function About(props) {
           </div>
           <div className='work--video-title'>amelie rennt</div>
           <div className='work--video-credits'>
-            <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
+              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            </a>
           </div>
           <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
         </div>
@@ -36,7 +40,9 @@ export default function About(props) {
           </div>
           <div className='work--video-title'>rocca verändert die welt (2019)</div>
           <div className='work--video-credits'>
-            <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
+              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            </a>
           </div>
           <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
         </div>
@@ -46,7 +52,9 @@ export default function About(props) {
           </div>
           <div className='work--video-title'>another project (2019)</div>
           <div className='work--video-credits'>
-            <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
+              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
+            </a>
           </div>
           <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
         </div>

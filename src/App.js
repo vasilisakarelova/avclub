@@ -19,7 +19,8 @@ import Error404 from './components/Error404'
 
 export default class App extends Component {
   state = {
-    isMobile: false
+    isMobile: false,
+    documentHasFocus: document.hasFocus()
   }
 
   constructor (props) {
@@ -39,6 +40,21 @@ export default class App extends Component {
 
   componentDidMount () {
     document.querySelector('.page-inner').style.opacity = 1
+
+    if (this.state.documentHasFocus) {
+      setTimeout(() => {
+        // go to a.v. club
+      }, 5000)
+    } else {
+      window.addEventListener('focus', ev => {
+        if (!this.state.documentHasFocus) {
+          this.setState({
+            documentHasFocus: document.hasFocus()
+          })
+          // go to a.v. club
+        }
+      })
+    }
 
     document.addEventListener('resized', (ev) => {
       if (ev.data.width < 984 && !this.state.isMobile) {
@@ -102,7 +118,7 @@ export default class App extends Component {
                             enter: 500,
                             exit: 500,
                           }}
-                          onEntered={page => { page.querySelector('.page-inner').style.opacity = 1 }}
+                          onEnter={page => { setTimeout(() => { page.querySelector('.page-inner').style.opacity = 1 },200) }}
                         >
                           <Route
                             location={location}
