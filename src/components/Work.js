@@ -1,64 +1,35 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Page from './Page'
 
-import about_0 from '../assets/avclub.png'
-import about_1 from '../assets/about_1.png'
-import about_2 from '../assets/about_2.png'
-import about_3 from '../assets/about_3.png'
+export default class extends Component {
+  render () {
+    const {data} = this.props
 
-export default function About(props) {
-  return (
-    <Page background="#FF8F6B" name='-work'>
-      <div className='work-inner'>
-        <div className='work--video-block'>
-          <div className='work--video-thumbnail'>
-            <img alt='video preview' className='work--video-thumbnail-img' src={about_0} />
-          </div>
-          <div className='work--video-title'>Tatort Weimar: Der Harte Kern</div>
-          <div className='work--video-credits'>
-            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
-              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
-            </a>
-          </div>
-          <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
+    return (
+      <Page background="#FF8F6B" name='-work'>
+        <div className='work-inner'>
+          { data.map((block,idx) => {
+
+              return (
+                <div className='work--video-block' key={idx}>
+                  <div className='work--video-thumbnail'>
+                    <img alt='video preview' className='work--video-thumbnail-img' src={block.img} />
+                  </div>
+                  <div className='work--video-title'>{block.title}</div>
+                  <div className='work--video-credits'>
+                    <a href={block.videoLink} target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
+                      <p dangerouslySetInnerHTML={{ __html: block.description }}></p>
+                    </a>
+                  </div>
+                  <div className='work--video-watch'>
+                    <a href={block.videoLink} target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
-        <div className='work--video-block'>
-          <div className='work--video-thumbnail'>
-            <img alt='video preview' className='work--video-thumbnail-img' src={about_1} />
-          </div>
-          <div className='work--video-title'>amelie rennt</div>
-          <div className='work--video-credits'>
-            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
-              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
-            </a>
-          </div>
-          <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
-        </div>
-        <div className='work--video-block'>
-          <div className='work--video-thumbnail'>
-            <img alt='video preview' className='work--video-thumbnail-img' src={about_2} />
-          </div>
-          <div className='work--video-title'>rocca verändert die welt (2019)</div>
-          <div className='work--video-credits'>
-            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
-              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
-            </a>
-          </div>
-          <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
-        </div>
-        <div className='work--video-block'>
-          <div className='work--video-thumbnail'>
-            <img alt='video preview' className='work--video-thumbnail-img' src={about_3} />
-          </div>
-          <div className='work--video-title'>another project (2019)</div>
-          <div className='work--video-credits'>
-            <a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
-              <p>Filmscore: Tobias Kuhn / Markus Perner<br/>Director: Tobias Wiemann<br/>Produktion: Lieblingsfilm<br/>Awards: Deutscher Filmpreis (Bester Kinderfilm) 2018; NDR Filmpreis 2018; GILDE Filmpreis 2017</p>
-            </a>
-          </div>
-          <div className='work--video-watch'><a href='https://www.youtube.com/watch?v=nD0F31hzPeM' target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a></div>
-        </div>
-      </div>
-    </Page>
-  );
+      </Page>
+    )
+  }
 }

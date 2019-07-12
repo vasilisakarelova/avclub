@@ -18,11 +18,6 @@ import AVClub from './components/AVClub'
 import Error404 from './components/Error404'
 
 export default class App extends Component {
-  state = {
-    isMobile: false,
-    documentHasFocus: document.hasFocus()
-  }
-
   constructor (props) {
     super(props)
 
@@ -34,6 +29,8 @@ export default class App extends Component {
     });
 
     this.state = {
+      isMobile: false,
+      documentHasFocus: document.hasFocus(),
       location: this.customHistory.location.pathname
     }
   }
@@ -43,7 +40,7 @@ export default class App extends Component {
 
     if (this.state.documentHasFocus) {
       setTimeout(() => {
-        // go to a.v. club
+        this.customHistory.push('/avclub')
       }, 5000)
     } else {
       window.addEventListener('focus', ev => {
@@ -51,7 +48,7 @@ export default class App extends Component {
           this.setState({
             documentHasFocus: document.hasFocus()
           })
-          // go to a.v. club
+          this.customHistory.push('/avclub')
         }
       })
     }
@@ -77,6 +74,10 @@ export default class App extends Component {
 
   render () {
     const supportsHistory = 'pushState' in window.history
+    const avclub = this.props.data.avclub
+    const composers = this.props.data.composers
+    const contact = this.props.data.contact
+    const work = this.props.data.work
 
     return (
       <Router history={this.customHistory} forceRefresh={!supportsHistory}>
@@ -85,16 +86,16 @@ export default class App extends Component {
               <Main />
               <div className='main-inner--mobile'>
                 <AccortionLink to="/avclub">A.V. Club</AccortionLink>
-                <AccordionRoute path="/avclub" component={AVClub}/>
+                <AccordionRoute path="/avclub" data={avclub} component={AVClub}/>
 
                 <AccortionLink to="/work">Work</AccortionLink>
-                <AccordionRoute path="/work" component={Work}/>
+                <AccordionRoute path="/work" data={work} component={Work}/>
 
                 <AccortionLink to="/composers">Composers</AccortionLink>
-                <AccordionRoute exact path="/composers" component={Composers}/>
+                <AccordionRoute exact path="/composers" data={composers} component={Composers}/>
 
                 <AccortionLink to="/contact">Contact</AccortionLink>
-                <AccordionRoute path="/contact" component={Contact}/>
+                <AccordionRoute path="/contact" data={contact} component={Contact}/>
               </div>
             </div>
           : <div className='main-wrap'>
@@ -125,10 +126,10 @@ export default class App extends Component {
                             render={() => (
                               <Switch>
                                 <Route exact path="/" component={Main} />
-                                <Route path="/work" component={Work} />
-                                <Route path="/composers" component={Composers} />
-                                <Route path="/contact" component={Contact} />
-                                <Route path="/avclub" component={AVClub} />
+                                <Route path="/work" render={() => <Work data={work} />} />
+                                <Route path="/composers" render={() => <Composers data={composers} />} />
+                                <Route path="/contact" render={() => <Contact data={contact} />} />
+                                <Route path="/avclub" render={() => <AVClub data={avclub} />} />
                                 <Route component={Error404} />
                               </Switch>
                             )}

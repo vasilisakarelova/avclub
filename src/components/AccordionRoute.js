@@ -8,7 +8,7 @@ import 'animate.css/source/_base.css'
 import 'animate.css/source/bouncing_entrances/bounceInDown.css'
 
 
-export default ({component: Component, ...rest}) => {
+export default ({component: Component, data, ...rest}) => {
   return (
     <Route {...rest} children={({match}) => (
       <AnimateHeight duration={ 300 } height={  match !== null ? 'auto' : 0 } className='page-mobile'>
@@ -22,7 +22,7 @@ export default ({component: Component, ...rest}) => {
             onEntered={page => { page.querySelector('.page-inner').style.opacity = 1 }}
             onExit={page => { page.querySelector('.page-inner').style.opacity = 0 }}
           >
-            <Component />
+            <Component data={data} />
           </CSSTransition>
         </div>
       </AnimateHeight>
