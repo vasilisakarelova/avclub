@@ -1,9 +1,15 @@
 .avclub-inner {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #E5D5E7;
   padding: 0 20px;
   min-height: 100%;
+
+  @media screen and (min-width: 984px) {
+    display: block;
+  }
 }
 
 .avclub--img {
@@ -30,15 +36,15 @@
   }
 
   &-wrap {
-    position: absolute;
+    position: relative;
     display: block;
     width: calc(100% - 40px);
     max-width: 800px;
-    top: 50%;
-    transform: translateY(-50%);
 
     @media screen and (min-width: 984px) {
+      position: absolute;
       width: 80%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%,-50%);
     }

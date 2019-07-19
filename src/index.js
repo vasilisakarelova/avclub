@@ -7,7 +7,7 @@ import resized from './utils/resized'
 import App from './App'
 import { unregister } from './serviceWorker'
 
-//import api from './testdb'
+// import api from './testdb'
 
 const origin = window.location.origin
 

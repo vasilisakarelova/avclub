@@ -23,7 +23,8 @@ html, body {
 .main-wrap--mobile {
   display: block;
   height: 100%;
-  position: relative;
+  width: 100%;
+  position: fixed;
 }
 
 .main-inner--mobile {

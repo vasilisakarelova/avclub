@@ -65,6 +65,7 @@
 }
 
 .work--video-credits {
+  position: relative;
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
@@ -81,8 +82,6 @@
     color: #fff;
     opacity: 0;
     transition: opacity .3s linear;
-    font-size: 20px;
-    line-height: 28px;
     text-align: center;
 
     &:hover {
@@ -90,9 +89,15 @@
     }
   }
 
+  @media screen and (min-width: 1440px) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
   p {
     font: inherit;
     margin: 0;
+    color: #000;
 
     @media screen and (min-width: 984px) {
       position: absolute;
@@ -100,24 +105,33 @@
       left: 50%;
       transform: translate(-50%,-50%);
       width: 80%;
+      color: #fff;
     }
   }
 
   &-link {
-    position: absolute;
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    color: #fff;
     text-decoration: none;
+
+    @media screen and (min-width: 984px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #fff;
+    }
 
     &:visited,
     &:focus,
     &:active {
-      color: #fff;
+      color: #000;
       text-decoration: none;
+
+      @media screen and (min-width: 984px) {
+        color: #fff;
+      }
     }
   }
 }
