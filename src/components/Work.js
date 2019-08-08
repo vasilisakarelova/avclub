@@ -17,12 +17,10 @@ export default class extends Component {
                   </div>
                   <div className='work--video-title'>{block.title}</div>
                   <div className='work--video-credits'>
-                    <a href={block.videoLink} target='_blank' rel='noopener noreferrer' className='work--video-credits-link'>
-                      <p dangerouslySetInnerHTML={{ __html: block.description }}></p>
-                    </a>
+                    <p dangerouslySetInnerHTML={{ __html: block.description }}></p>
                   </div>
                   <div className='work--video-watch'>
-                    <a href={block.videoLink} target='_blank' rel='noopener noreferrer' className='work--video-watch-link'>watch trailer</a>
+                    <a href={block.videoLink} target='_blank' rel='noopener noreferrer' className='work--video-watch-link'><span className='work--video-watch-icon'>&#9654;</span>watch trailer</a>
                   </div>
                 </div>
               )

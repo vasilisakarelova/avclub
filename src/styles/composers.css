@@ -46,12 +46,15 @@
     border-top: none;
     border-bottom: 1px solid #000;
     text-align: left;
-    font-size: 40px;
-    line-height: 60px;
 
     &.is-open + .composers-item__contentOuter {
       border-bottom: 1px solid #000;
     }
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 40px;
+    line-height: 60px;
   }
 }
 
@@ -83,8 +86,12 @@
     padding-top: 18px;
 
     @media screen and (min-width: 984px) {
-      width: 34%;
+      width: 25%;
       padding-top: 0;
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 34%;
     }
   }
 }
@@ -101,11 +108,20 @@
   color: #000000;
 
   @media screen and (min-width: 984px) {
-    font-size: 20px;
-    line-height: 28px;
-    width: 60%;
+    width: 69%;
     margin-right: 6%;
     padding-top: 0;
+  }
+
+  @media screen and (min-width: 984px) and (max-width: 1439px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 60%;
+    font-size: 20px;
+    line-height: 28px;
   }
 
   p {

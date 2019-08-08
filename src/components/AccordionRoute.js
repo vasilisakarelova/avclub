@@ -7,26 +7,43 @@ Source: https://github.com/daneden/animate.css */
 import 'animate.css/source/_base.css'
 import 'animate.css/source/bouncing_entrances/bounceInDown.css'
 
-
 export default ({component: Component, data, ...rest}) => {
-  return (
-    <Route {...rest} children={({match}) => (
-      <AnimateHeight duration={ 300 } height={  match !== null ? 'auto' : 0 } className='page-mobile'>
-        <div className='page-mobile--inner'>
-          <CSSTransition in={match !== null}
-            timeout={{
-              enter: 1000,
-              exit: 300
+    return (
+      <Route {...rest} children={ ({match}) => {
+        return (
+          <AnimateHeight duration={ 300 }
+            applyInlineTransitions={false}
+            height={  match !== null ? 'auto' : 0 }
+            className='page-mobile'
+            animationStateClasses={{
+              animating: 'rah-animating',
+              animatingUp: 'rah-animating--up',
+              animatingDown: 'rah-animating--down',
+              static: 'rah-static',
+              animatingToHeightZero: 'rah-animating--to-height-zero',
+              animatingToHeightAuto: 'rah-animating--to-height-auto',
+              staticHeightZero: 'rah-static--height-zero',
+              staticHeightAuto: 'rah-static--height-auto',
             }}
-            appear
-            onEntered={page => { page.querySelector('.page-inner').style.opacity = 1; page.closest('.page-mobile').style.height = 'calc(100% - 160px)'; }}
-            onExit={page => { page.querySelector('.page-inner').style.opacity = 0; page.closest('.page-mobile').style.height = ''; }}
-          >
-            <Component data={data} />
-          </CSSTransition>
-        </div>
-      </AnimateHeight>
-    )}
+            >
+            <div className='page-mobile--inner'>
+              <CSSTransition in={match !== null}
+                timeout={{
+                  enter: 1000,
+                  exit: 300
+                }}
+                appear
+                classNames={{
+                  enterDone: 'is-shown',
+                }}
+              >
+                <Component data={data} />
+              </CSSTransition>
+            </div>
+          </AnimateHeight>
+        )
+      }
+    }
     >
     </Route>
   );

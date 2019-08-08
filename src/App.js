@@ -23,20 +23,39 @@ export default class App extends Component {
 
     this.updateRouteState = this.updateRouteState.bind(this)
 
+    let prevPath = window.location.pathname.replace('/getdeveloped', '')
+
     this.customHistory = createBrowserHistory({ basename: '/getdeveloped' })
-    this.customHistory.listen(location => {
-      this.updateRouteState(location.pathname)
+    this.customHistory.listen(currentLocation => {
+      this.updateRouteState(currentLocation.pathname, prevPath)
+      prevPath = currentLocation.pathname
     });
 
     this.state = {
-      isMobile: false,
+      isMobile: window.innerWidth < 984,
       documentHasFocus: document.hasFocus(),
-      location: this.customHistory.location.pathname
+      location: this.customHistory.location.pathname,
+      prevPath
     }
   }
 
   componentDidMount () {
     document.querySelector('.page-inner').style.opacity = 1
+
+    document.addEventListener('resized', (ev) => {
+      if (ev.data.width < 984 && !this.state.isMobile) {
+        this.setState({
+          isMobile: true
+        })
+      } else if (ev.data.width >= 984 && this.state.isMobile) {
+        this.setState({
+          isMobile: false
+        })
+        document.querySelector('.page-inner').style.opacity = 1
+      }
+    })
+
+    if (this.state.location !== '/') return
 
     if (this.state.documentHasFocus) {
       setTimeout(() => {
@@ -52,23 +71,12 @@ export default class App extends Component {
         }
       })
     }
-
-    document.addEventListener('resized', (ev) => {
-      if (ev.data.width < 984 && !this.state.isMobile) {
-        this.setState({
-          isMobile: true
-        })
-      } else if (ev.data.width >= 984 && this.state.isMobile) {
-        this.setState({
-          isMobile: false
-        })
-      }
-    })
   }
 
-  updateRouteState (location) {
+  updateRouteState (location, prevPath) {
     this.setState({
-      location
+      location,
+      prevPath
     })
   }
 
@@ -86,16 +94,16 @@ export default class App extends Component {
               <Main />
               <div className='main-inner--mobile'>
                 <AccortionLink to="/avclub">A.V. Club</AccortionLink>
-                <AccordionRoute path="/avclub" data={avclub} component={AVClub}/>
+                <AccordionRoute history={this.customHistory} path="/avclub" data={avclub} component={AVClub}/>
 
                 <AccortionLink to="/work">Work</AccortionLink>
-                <AccordionRoute path="/work" data={work} component={Work}/>
+                <AccordionRoute history={this.customHistory} path="/work" data={work} component={Work}/>
 
                 <AccortionLink to="/composers">Composers</AccortionLink>
-                <AccordionRoute exact path="/composers" data={composers} component={Composers}/>
+                <AccordionRoute history={this.customHistory} exact path="/composers" data={composers} component={Composers}/>
 
                 <AccortionLink to="/contact">Contact</AccortionLink>
-                <AccordionRoute path="/contact" data={contact} component={Contact}/>
+                <AccordionRoute history={this.customHistory} path="/contact" data={contact} component={Contact}/>
               </div>
             </div>
           : <div className='main-wrap'>

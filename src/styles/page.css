@@ -6,6 +6,10 @@
   @media screen and (min-width: 984px) {
     padding: 60px;
   }
+
+  > div {
+    height: 100%;
+  }
 }
 
 .page {
@@ -27,6 +31,7 @@
 
 .page-mobile {
   max-height: calc(100% - 160px);
+  height: calc(100% - 160px);
 
   > div {
     position: relative;
@@ -34,10 +39,29 @@
   }
 }
 
+.rah-static--height-auto {
+  height: calc(100% - 160px) !important;
+}
+
+.rah-animating--up.rah-animating--to-height-zero {
+  transition: height .3s ease;
+}
+
+.rah-animating--down.rah-animating--to-height-auto {
+  height: calc(100% - 160px)!important;
+  transition: height .3s ease;
+}
+
+/* .rah-static.rah-animating--up ~ {} */
+
 .page-mobile--inner {
   position: relative;
   height: 100%;
   overflow: hidden;
+
+  .is-shown .page-inner {
+    opacity: 1;
+  }
 }
 
 .page-inner {

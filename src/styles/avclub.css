@@ -1,109 +1,68 @@
 .avclub-inner {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   background: #E5D5E7;
   padding: 0 20px;
   min-height: 100%;
+  text-align: center;
 
   @media screen and (min-width: 984px) {
-    display: block;
+    padding: 0 120px;
+    justify-content: center;
   }
 }
 
-.avclub--img {
-  position: absolute;
-  display: none;
-  width: 100%;
-  top: 0;
-  left: 0;
+.avclub--logo {
+  position: relative;
+  display: block;
 
-  @media screen and (min-width: 984px) {
-    display: block;
-  }
-
-  &-mobile {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: 0;
-    left: 0;
-
-    @media screen and (min-width: 984px) {
-      display: none;
-    }
-  }
-
-  &-wrap {
+  svg {
     position: relative;
     display: block;
-    width: calc(100% - 40px);
-    max-width: 800px;
-
-    @media screen and (min-width: 984px) {
-      position: absolute;
-      width: 80%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
   }
 
   &-container {
     position: relative;
     display: block;
-    padding-top: 53%;
-    overflow: hidden;
+    width: 15%;
+    max-width: 255px;
+    min-width: 100px;
   }
 }
 
-.avclub--title {
-  position: relative;
-  display: block;
+.avclub--intro {
   font-family: Georgia;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  line-height: 27px;
+  line-height: 28px;
   text-align: center;
   letter-spacing: 0.02em;
   color: #000000;
 
-  @media screen and (min-width: 984px) {
-    font-size: 40px;
-    line-height: 42px;
+  @media screen and (min-width: 984px) and (max-width: 1439px) {
+    font-size: 24px;
+    line-height: 32px;
   }
 
-  &-small {
-    position: relative;
-    display: block;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 10px;
-    line-height: 18px;
-    text-align: center;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #000000;
-    padding-bottom: 10px;
+  @media screen and (min-width: 1440px) {
+    font-size: 40px;
+    line-height: 60px;
+  }
 
-    @media screen and (min-width: 984px) {
-      font-size: 16px;
-      line-height: 38px;
-    }
+  p {
+    margin: 0;
   }
 
   &-wrap {
     position: relative;
-    width: 100%;
-    text-align: center;
-    padding-top: 10px;
     display: block;
 
     @media screen and (min-width: 984px) {
-      padding-top: 24px;
+      padding-top: 53px;
     }
   }
 }
