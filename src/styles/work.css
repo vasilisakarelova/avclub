@@ -8,9 +8,9 @@
   @media screen and (min-width: 984px) {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 50px 0px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 10%;
   }
 }
 
@@ -20,9 +20,38 @@
   width: 100%;
 
   @media screen and (min-width: 984px) {
-    width: 35%;
+    width: 50%;
     margin-bottom: 75px;
+
+    &:nth-of-type(1) {
+      flex: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+
+      .work--video-block-inner {
+        width: 100%;
+      }
+
+      .work--video-title {
+        font-size: 18px;
+      }
+    }
+
+    &:nth-of-type(2n) {
+      padding-right: 50px;
+    }
+
+    &:nth-of-type(2n + 1) {
+      padding-left: 50px;
+    }
   }
+}
+
+.work--video-block-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .work--video-thumbnail {

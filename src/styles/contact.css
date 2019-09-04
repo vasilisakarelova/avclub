@@ -16,6 +16,7 @@
     position: relative;
     display: block;
     padding-top: 20px;
+    text-align: center;
   }
 
   &--link {
@@ -29,13 +30,14 @@
     font-size: 20px;
     line-height: 28px;
     letter-spacing: 0.02em;
-    text-decoration-line: underline;
     color: #000000;
-    text-transform: capitalize;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+    display: unset;
 
     @media screen and (min-width: 984px) {
       font-size: 40px;
-      line-height: 60px;
+      line-height: 40px;
     }
 
     &:active,
@@ -55,6 +57,31 @@
     left: 50%;
     transform: translate(-50%,-50%);
     padding-top: 0px;
+  }
+
+  &--preline {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.02em;
+    color: #000000;
+    text-transform: capitalize;
+
+    @media screen and (min-width: 984px) {
+      font-size: 40px;
+      line-height: 60px;
+    }
+  }
+
+  &--link {
+    position: relative;
+    display: block;
   }
 
   &--img {
@@ -99,6 +126,10 @@
     color: #000000;
     padding-right: 20px;
     cursor: pointer;
+
+    &:nth-of-type(2) {
+      padding-right: 0;
+    }
 
     @media screen and (min-width: 984px) {
       font-size: 16px;

@@ -23,9 +23,9 @@ export default class App extends Component {
 
     this.updateRouteState = this.updateRouteState.bind(this)
 
-    let prevPath = window.location.pathname.replace('/getdeveloped', '')
+    let prevPath = window.location.pathname
 
-    this.customHistory = createBrowserHistory({ basename: '/getdeveloped' })
+    this.customHistory = createBrowserHistory()
     this.customHistory.listen(currentLocation => {
       this.updateRouteState(currentLocation.pathname, prevPath)
       prevPath = currentLocation.pathname

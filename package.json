@@ -2,7 +2,7 @@
   "name": "avclub",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://avclub.de/getdeveloped/",
+  "homepage": "http://avclub.de/",
   "dependencies": {
     "animate.css": "^3.7.2",
     "classnames": "^2.2.6",

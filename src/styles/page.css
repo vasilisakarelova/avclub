@@ -5,10 +5,12 @@
 
   @media screen and (min-width: 984px) {
     padding: 60px;
+    z-index: 1;
   }
 
   > div {
     height: 100%;
+    overflow: hidden;
   }
 }
 
@@ -20,7 +22,6 @@
 
   @media screen and (min-width: 984px) {
     position: fixed;
-    top: 60px;
     height: calc(100vh - 120px);
     width: calc(100% - 80px);
     overflow-y: auto;
@@ -88,7 +89,7 @@
 .page-home--inner {
   position: relative;
   height: 100%;
-  background-image: url('./assets/noise.gif');
+  background-image: url('./assets/noise3.gif');
   background-position: center;
   background-size: cover;
 
@@ -104,6 +105,7 @@
     transform: translate(-50%,-50%);
     width: 25vw;
     max-width: 500px;
+    min-width: 200px;
   }
 }
 

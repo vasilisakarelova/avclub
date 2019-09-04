@@ -18,7 +18,7 @@ export default ({ isOpen, onRequestClose, data }) => {
         beforeClose: 'overlay-base_before-close'
       }}
       shouldCloseOnOverlayClick={true}
-      closeTimeoutMS={2000}
+      closeTimeoutMS={400}
       >
       <div className='legal-info--wrap' id='yourAppElement'>
         <div className='legal-info--container'>
