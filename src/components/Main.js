@@ -1,9 +1,13 @@
 import React from 'react'
+import {Helmet} from "react-helmet"
 import Page from './Page'
 
 export default function About(props) {
   return (
     <Page background="#000" name='-home'>
+      <Helmet>
+        <title>A.V. Club | Music for Films</title>
+      </Helmet>
       <div className='page-home--inner'>
         <span className='page-home--inner-logo'>
           <svg width="100%" height="100%" viewBox="0 0 458 383" fill="none" xmlns="http://www.w3.org/2000/svg">

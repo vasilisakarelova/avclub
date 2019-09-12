@@ -1,23 +1,19 @@
 import React, { Component } from 'react'
+import {Helmet} from "react-helmet"
 import Page from './Page'
 import Collapsible from 'react-collapsible'
 
-import tobias_kuhn from '../assets/tobias_kuhn.png'
-
 export default class extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
-    const {data} = this.props
+    const { data } = this.props
 
     return (
       <Page background="#FFB169" name='-composers'>
+        <Helmet>
+          <title>A.V. Club | Music for Films | Composers</title>
+        </Helmet>
         <div className='composers-inner'>
           { data.map((composer, idx) => {
-              console.log(composer)
-
               return (
                 <Collapsible open={idx === 0} classParentString='composers-item' trigger={composer.name} key={idx}>
                   <div className='composers-item--img-wrap'>

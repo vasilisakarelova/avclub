@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Helmet} from "react-helmet"
 import Page from './Page'
 
 export default class extends Component {
@@ -7,6 +8,9 @@ export default class extends Component {
 
     return (
       <Page background="#FF8F6B" name='-work'>
+        <Helmet>
+          <title>A.V. Club | Music for Films | Work</title>
+        </Helmet>
         <div className='work-inner'>
           { data.map((block,idx) => {
 

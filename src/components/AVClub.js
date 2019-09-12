@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
+import {Helmet} from "react-helmet"
 import Page from './Page'
 
 export default class extends Component {
-  constructor (props) {
-    super(props)
-  }
-
   render () {
     return (
       <Page background="#E5D5E7" name='-avclub'>
+        <Helmet>
+          <title>A.V. Club | Music for Films</title>
+        </Helmet>
         <div className='avclub-inner'>
           <div className='avclub--logo-container'>
             <svg width="100%" height="100%" viewBox="0 0 254 206" fill="none" xmlns="http://www.w3.org/2000/svg">
